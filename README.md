@@ -3,4 +3,4 @@
 
 # 前置
 需要先看godot官网的c++教程
-!(GDExtension C++ 示例)[https://docs.godotengine.org/zh-cn/4.x/tutorials/scripting/gdextension/gdextension_cpp_example.html]
+(GDExtension C++ 示例)[https://docs.godotengine.org/zh-cn/4.x/tutorials/scripting/gdextension/gdextension_cpp_example.html]
