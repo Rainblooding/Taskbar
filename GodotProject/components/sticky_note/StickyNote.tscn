@@ -1,0 +1,33 @@
+[gd_scene load_steps=2 format=3 uid="uid://rfk64n8ltc8r"]
+
+[sub_resource type="GDScript" id="GDScript_2muhf"]
+script/source = "extends WindowTaskbar
+
+
+@onready var _MainWindow: Window = get_window()
+
+func _ready() -> void:
+	var handle = DisplayServer.window_get_native_handle(DisplayServer.HandleType.WINDOW_HANDLE, _MainWindow.get_window_id())
+	var taskbar_utils = TaskbarUtils.new()
+	taskbar_utils.hide_taskbar(handle)
+
+func _on_check_button_pressed() -> void:
+	taskbar_visible = !taskbar_visible
+"
+
+[node name="StickyNote" type="WindowTaskbar"]
+taskbar_visible = false
+position = Vector2i(100, 100)
+script = SubResource("GDScript_2muhf")
+
+[node name="Panel" type="Panel" parent="."]
+offset_right = 120.0
+offset_bottom = 100.0
+
+[node name="TextEdit" type="TextEdit" parent="Panel"]
+layout_mode = 0
+offset_right = 120.0
+offset_bottom = 100.0
+text = "今日事今日毕"
+wrap_mode = 1
+autowrap_mode = 2

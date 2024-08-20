@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cjwxb24nu42fl"]
+
+[ext_resource type="PackedScene" uid="uid://rfk64n8ltc8r" path="res://components/sticky_note/StickyNote.tscn" id="2_71lv4"]
+[ext_resource type="Script" path="res://components/sticky_note/StickyNote.gd" id="3_rwl5y"]
+
+[node name="Main" type="Node"]
+
+[node name="StickyNote" parent="." instance=ExtResource("2_71lv4")]
+script = ExtResource("3_rwl5y")
+
+[node name="CheckButton" type="CheckButton" parent="."]
+offset_right = 176.0
+offset_bottom = 31.0
+text = "是否在任务栏显示"
+
+[connection signal="pressed" from="CheckButton" to="StickyNote" method="_on_check_button_pressed"]
